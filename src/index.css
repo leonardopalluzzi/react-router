@@ -107,3 +107,27 @@ body {
     background-image: linear-gradient(transparent, rgb(0, 0, 0));
   }
 }
+
+/* #region about  */
+
+.about {
+  background-image: url('./jumbo-bg.jpg');
+  background-size: cover;
+
+  .cont_about {
+    background-image: linear-gradient(transparent, rgb(0, 0, 0));
+  }
+
+  .team {
+    text-align: center;
+
+    .team_img {
+      width: 100%;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      margin: 1rem 0;
+    }
+  }
+
+
+}
