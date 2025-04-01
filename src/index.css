@@ -34,8 +34,6 @@ body {
       height: auto;
     }
 
-    .gradient {}
-
     .phone_title {
       bottom: 0;
       width: 100%;
@@ -80,27 +78,32 @@ body {
 
 /* #region feed  */
 
-.feed {
-
-  .feed_img {
-    display: inline-block;
-    width: 150%;
-    border-radius: 20px;
-
-  }
-
-  .feed_title {
-    bottom: 0;
-    padding: 2rem 1rem;
-  }
-
+.feed_card_container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 /* #endregion feed  */
 
+
 /* #region posts  */
-.posts {
+.card {
+  display: flex;
+
+  .card-body {
+    width: 100%;
+  }
+
   img {
     border-radius: 20px;
+  }
+
+  .card_titles {
+    position: absolute;
+    padding: 2rem 1.5rem;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(transparent, rgb(0, 0, 0));
   }
 }

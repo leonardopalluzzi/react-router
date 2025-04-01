@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import Jumbo from '../components/Jumbo'
+import Card from '../components/Card'
 
 export default function Home({ data }) {
     const [timer, setTimer] = useState(0)
@@ -20,30 +21,18 @@ export default function Home({ data }) {
             <section className='feed py-5'>
                 <div className="container">
                     <h1 className='text-center'>Feed</h1>
-                    <div id="carousel" className="carousel slide w-50 m-auto py-5">
-                        <div className="carousel-inner">
+                    <div id="carousel" className="carousel slide w-100 m-auto py-5">
+                        <div className="carousel-inner w-100">
 
                             {/* post  */}
-                            <div className="carousel-item active">
-                                <div className="card bg-transparent text-white">
-                                    <div className="card-body d-flex m-auto position-relative">
-                                        <img src={data[timer].image} className="d-block feed_img" alt="..." />
-                                        <div className="position-absolute feed_title">
-                                            <h4>{data[timer].title}</h4>
-                                            <p className="fs-6">{data[timer].content}</p>
-                                            <a
-                                                name=""
-                                                id=""
-                                                className="btn btn-primary"
-                                                href="#"
-                                                role="button"
-                                            >vai al post</a>
-                                        </div>
-
-
+                            {data.map(item => (
+                                <div className={`carousel-item ${item.id == 1 ? 'active' : ''}`}>
+                                    <div className="feed_card_container">
+                                        <Card img={item.image} title={item.title} content={item.content} />
                                     </div>
                                 </div>
-                            </div>
+
+                            ))}
                         </div>
                         <button className="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
                             <span className="carousel-control-prev-icon" aria-hidden="true"></span>

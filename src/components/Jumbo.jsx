@@ -26,7 +26,6 @@ export default function Jumbo({ data, timer }) {
                             <div className='mobile-phone'>
                                 <div className='brove'><span className='speaker'></span></div>
                                 <div className='screen'>
-                                    <div className='gradient'></div>
                                     <div className="position-absolute phone_title">
                                         <h1 className=''>{data[timer].title}</h1>
                                         <p>{data[timer].content}</p>
