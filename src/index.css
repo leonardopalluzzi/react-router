@@ -22,6 +22,8 @@ body {
     box-shadow: 0 0 20px #e2e2e2;
     border-radius: 30px;
     background-color: black;
+    position: relative;
+    overflow: hidden;
 
     ::-webkit-scrollbar {
       display: none;
@@ -31,6 +33,16 @@ body {
       min-width: 150%;
       height: auto;
     }
+
+    .gradient {}
+
+    .phone_title {
+      bottom: 0;
+      width: 100%;
+      padding: 4rem 1rem;
+      overflow: hidden;
+      background-image: linear-gradient(transparent, rgb(0, 0, 0));
+    }
   }
 
   .screen {
@@ -39,14 +51,15 @@ body {
     background: #f2f2f2;
     border-radius: 30px;
     overflow-y: auto;
+
   }
 
   .brove {
     width: 150px;
     height: 20px;
-    background: white;
+    background: rgb(0, 0, 0);
     position: absolute;
-    margin: 0 90px;
+    margin: 0 80px;
     border-radius: 0 0 20px 20px;
   }
 

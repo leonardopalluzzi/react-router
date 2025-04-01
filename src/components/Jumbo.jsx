@@ -26,6 +26,12 @@ export default function Jumbo() {
                             <div class='mobile-phone'>
                                 <div class='brove'><span class='speaker'></span></div>
                                 <div class='screen'>
+                                    <div className='gradient'></div>
+                                    <div className="position-absolute phone_title">
+                                        <h1 className=''>titolo</h1>
+                                        <p>breve descrizione</p>
+                                    </div>
+
                                     <img className='phone_img' src="https://picsum.photos/200/300" alt="" />
                                 </div>
                             </div>
