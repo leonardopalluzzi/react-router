@@ -22,7 +22,7 @@ export default function Header() {
     return (
         <>
             <nav
-                className="navbar navbar-expand-sm navbar-light bg-light"
+                className="navbar navbar-expand-sm navbar-dark bg-dark"
             >
                 <div className="container">
                     <NavLink className="navbar-brand" to={'/'} >Posts</NavLink>
