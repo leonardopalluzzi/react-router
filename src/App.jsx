@@ -15,7 +15,7 @@ function App() {
           <Route Component={DefaultLayout}>
             <Route data={data} index element={<Home data={data} />} />
             <Route path="/about" Component={About} />
-            <Route path="/posts" Component={Posts} />
+            <Route path="/posts" element={<Posts data={data} />} />
           </Route>
         </Routes>
       </BrowserRouter>
