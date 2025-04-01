@@ -1,30 +1,45 @@
+import { useState, useEffect } from "react"
 import Jumbo from '../components/Jumbo'
 
-export default function Home() {
+export default function Home({ data }) {
+    const [timer, setTimer] = useState(0)
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setTimer((prevTimer) => (prevTimer >= 9 ? 0 : prevTimer + 1));
+        }, 3000);
+
+
+        // Pulizia dell'intervallo quando il componente viene smontato
+        return () => clearInterval(interval);
+    }, []);
+    console.log(timer);
     return (
         <>
-            <Jumbo />
+            <Jumbo data={data} timer={timer} />
             <section className='feed py-5'>
                 <div className="container">
-                    <h1>FEED</h1>
+                    <h1 className='text-center'>Feed</h1>
                     <div id="carousel" className="carousel slide w-50 m-auto py-5">
                         <div className="carousel-inner">
 
                             {/* post  */}
                             <div className="carousel-item active">
                                 <div className="card bg-transparent text-white">
-                                    <div className="card-body d-flex flex-column m-auto">
-                                        <img src="https://picsum.photos/200/300" className="d-block w-100" alt="..." />
-                                        <h3>Titolo</h3>
-                                        <p>Breve descrizione</p>
-                                        <a
-                                            name=""
-                                            id=""
-                                            class="btn btn-primary"
-                                            href="#"
-                                            role="button"
-                                        >vai al post</a
-                                        >
+                                    <div className="card-body d-flex m-auto position-relative">
+                                        <img src={data[timer].image} className="d-block feed_img" alt="..." />
+                                        <div className="position-absolute feed_title">
+                                            <h4>{data[timer].title}</h4>
+                                            <p className="fs-6">{data[timer].content}</p>
+                                            <a
+                                                name=""
+                                                id=""
+                                                className="btn btn-primary"
+                                                href="#"
+                                                role="button"
+                                            >vai al post</a>
+                                        </div>
+
 
                                     </div>
                                 </div>

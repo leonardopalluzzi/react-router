@@ -1,6 +1,6 @@
 import Card from '../components/Card'
 
-export default function Jumbo() {
+export default function Jumbo({ data, timer }) {
     return (
         <>
             <section className="jumbotron ">
@@ -23,16 +23,16 @@ export default function Jumbo() {
                             </div>
                         </div>
                         <div className="col-md-6 phone_mockup">
-                            <div class='mobile-phone'>
-                                <div class='brove'><span class='speaker'></span></div>
-                                <div class='screen'>
+                            <div className='mobile-phone'>
+                                <div className='brove'><span className='speaker'></span></div>
+                                <div className='screen'>
                                     <div className='gradient'></div>
                                     <div className="position-absolute phone_title">
-                                        <h1 className=''>titolo</h1>
-                                        <p>breve descrizione</p>
+                                        <h1 className=''>{data[timer].title}</h1>
+                                        <p>{data[timer].content}</p>
                                     </div>
 
-                                    <img className='phone_img' src="https://picsum.photos/200/300" alt="" />
+                                    <img className='phone_img' src={data[timer].image} alt="" />
                                 </div>
                             </div>
                         </div>

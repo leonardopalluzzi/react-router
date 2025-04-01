@@ -82,10 +82,18 @@ body {
 
 .feed {
 
-  img {
-    max-width: 100%;
+  .feed_img {
+    display: inline-block;
+    width: 150%;
     border-radius: 20px;
+
   }
+
+  .feed_title {
+    bottom: 0;
+    padding: 2rem 1rem;
+  }
+
 }
 
 /* #endregion feed  */

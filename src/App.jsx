@@ -3,6 +3,7 @@ import DefaultLayout from "./layouts/DefaultLayout"
 import Home from "./pages/Home"
 import About from "./pages/About"
 import Posts from "./pages/Posts"
+import data from './data/posts'
 
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route Component={DefaultLayout}>
-            <Route index Component={Home} />
+            <Route data={data} index element={<Home data={data} />} />
             <Route path="/about" Component={About} />
             <Route path="/posts" Component={Posts} />
           </Route>
