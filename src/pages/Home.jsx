@@ -4,7 +4,7 @@ export default function Home() {
     return (
         <>
             <Jumbo />
-            <section className='feed'>
+            <section className='feed py-5'>
                 <div className="container">
                     <h1>FEED</h1>
                     <div id="carousel" className="carousel slide w-50 m-auto py-5">

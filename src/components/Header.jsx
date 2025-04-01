@@ -40,7 +40,7 @@ export default function Header() {
                     <div className="collapse navbar-collapse" id="collapsibleNavId">
                         <ul className="navbar-nav me-auto mt-2 mt-lg-0">
                             {menu.map(item => (
-                                <NavLink className={`nav-link`} to={item.link}>{item.title}</NavLink>
+                                <NavLink key={item.id} className={`nav-link`} to={item.link}>{item.title}</NavLink>
                             ))}
                         </ul>
                     </div>
