@@ -8,13 +8,13 @@ const menu = [
     },
     {
         id: 2,
-        title: 'About',
-        link: '/about'
+        title: 'Posts',
+        link: '/posts'
     },
     {
         id: 3,
-        title: 'Posts',
-        link: '/posts'
+        title: 'About',
+        link: '/about'
     }
 ]
 
