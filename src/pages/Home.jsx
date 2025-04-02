@@ -26,7 +26,7 @@ export default function Home({ data }) {
 
                             {/* post  */}
                             {data.map(item => (
-                                <div className={`carousel-item ${item.id == 1 ? 'active' : ''}`}>
+                                <div key={item.id} className={`carousel-item ${item.id == 1 ? 'active' : ''}`}>
                                     <div className="feed_card_container">
                                         <Card img={item.image} title={item.title} content={item.content} />
                                     </div>
