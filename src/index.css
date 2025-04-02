@@ -156,11 +156,32 @@ body {
     }
   }
 
+  .likes {
+    i {
+      transition-duration: 1s;
+
+      &:hover {
+        color: red;
+      }
+    }
+  }
+
   .icons {
     width: 50%;
     margin: 2rem 0;
     display: flex;
     justify-content: space-between;
+    list-style: none;
+
+    a {
+      color: white;
+      transition-duration: 1s;
+
+      &:hover {
+        color: lightseagreen;
+      }
+    }
+
   }
 
   .comments {

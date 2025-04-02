@@ -28,11 +28,13 @@ export default function Product({ data }) {
                                 </button>
                                 <span>{likes}</span>
                             </div>
-                            <div className="icons">
-                                <i class="bi bi-share"></i>
-                                <i class="bi bi-instagram"></i>
-                                <i class="bi bi-facebook"></i>
-                                <i class="bi bi-twitter-x"></i>
+                            <div>
+                                <ul className="icons">
+                                    <li><a href=""><i class="bi bi-share"></i></a></li>
+                                    <li><a href=""><i class="bi bi-instagram"></i></a></li>
+                                    <li><a href=""><i class="bi bi-facebook"></i></a></li>
+                                    <li><a href=""><i class="bi bi-twitter-x"></i></a></li>
+                                </ul>
                             </div>
                         </div>
                         <div className="col-6">
@@ -44,12 +46,18 @@ export default function Product({ data }) {
                                 <div className="card bg-transparent text-white">
                                     <div className="card-header d-flex">
                                         <img className='profile_img' src="https://picsum.photos/200/300" alt="" />
-                                        <h4 className='mx-3'>Nome Utente</h4>
+                                        <h5 className='mx-3'>Nome Utente</h5>
                                     </div>
                                     <div className="card-body">
                                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi, repudiandae.</p>
                                     </div>
                                 </div>
+
+                                <form action="" className="add_comment">
+                                    <h3>Add a Comment</h3>
+                                    <textarea className='bg-transparent form-control w-100 text-white my-4' name="addComment" id="addComment"></textarea>
+                                    <button type='submit' className='btn btn-primary'>Comment</button>
+                                </form>
                             </div>
                         </div>
                     </div>
