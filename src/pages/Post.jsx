@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import { useState, useEffect } from "react"
+import { Link } from "react-router-dom"
 
 export default function Product({ data }) {
 
@@ -38,6 +39,9 @@ export default function Product({ data }) {
                             </div>
                         </div>
                         <div className="col-6">
+                            <Link onClick={() => navigate(-1)}>
+                                <i class="bi bi-arrow-right float-right"></i>
+                            </Link>
                             <h1>{post.title}</h1>
                             <p className='my-5'>{post.content}</p>
                             <span>Likes: {likes} &hearts;</span>

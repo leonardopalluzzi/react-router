@@ -137,6 +137,7 @@ body {
 /* #region post  */
 
 .post {
+
   .post_content {
     width: 80%;
     border-radius: 20px;
@@ -144,6 +145,17 @@ body {
 
   h1 {
     margin-bottom: 4rem;
+  }
+
+  .bi-arrow-right {
+    float: right;
+    font-size: 2rem;
+    color: white;
+    transition-duration: 1s;
+
+    &:hover {
+      color: lightseagreen;
+    }
   }
 
   .post_img {
