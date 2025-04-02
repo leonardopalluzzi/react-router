@@ -3,6 +3,7 @@ import Jumbo from '../components/Jumbo'
 import Card from '../components/Card'
 
 export default function Home({ data }) {
+
     const [timer, setTimer] = useState(0)
 
     useEffect(() => {
