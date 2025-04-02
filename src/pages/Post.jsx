@@ -5,16 +5,39 @@ import { Link } from "react-router-dom"
 
 export default function Product({ data }) {
 
+    const { id } = useParams()
+
     const [post, setPost] = useState('')
     const [likes, setLikes] = useState(0)
+    const [currentId, setCurrentId] = useState(id)
 
-    const { id } = useParams()
     const navigate = useNavigate()
 
     useEffect(() => {
-        setPost(data.find(intem => intem.id == id))
-    }, [])
+        setPost(data.find(item => item.id == currentId))
+        console.log(currentId)
 
+
+    }, [currentId])
+
+
+    function nextId() {
+        if (currentId < data.length) {
+            setCurrentId(Number(currentId) + 1)
+        } else {
+            setCurrentId(data[0].id)
+        }
+
+    }
+
+    function prevId() {
+        if (currentId > data[0].id) {
+            setCurrentId(Number(currentId) - 1)
+        } else {
+            setCurrentId(data[data.length - 1].id)
+        }
+
+    }
 
     return (
         <>
@@ -25,22 +48,22 @@ export default function Product({ data }) {
                             <img className='post_content' src={post.image} alt="" />
                             <div className="likes">
                                 <button onClick={() => setLikes(likes + 1)} className='btn btn-transparent text-white fs-1'>
-                                    <i class="bi bi-heart"></i>
+                                    <i className="bi bi-heart"></i>
                                 </button>
                                 <span>{likes}</span>
                             </div>
                             <div>
                                 <ul className="icons">
-                                    <li><a href=""><i class="bi bi-share"></i></a></li>
-                                    <li><a href=""><i class="bi bi-instagram"></i></a></li>
-                                    <li><a href=""><i class="bi bi-facebook"></i></a></li>
-                                    <li><a href=""><i class="bi bi-twitter-x"></i></a></li>
+                                    <li><a href=""><i className="bi bi-share"></i></a></li>
+                                    <li><a href=""><i className="bi bi-instagram"></i></a></li>
+                                    <li><a href=""><i className="bi bi-facebook"></i></a></li>
+                                    <li><a href=""><i className="bi bi-twitter-x"></i></a></li>
                                 </ul>
                             </div>
                         </div>
                         <div className="col-6">
                             <Link onClick={() => navigate(-1)}>
-                                <i class="bi bi-arrow-right float-right"></i>
+                                <i className="bi bi-arrow-right float-right"></i>
                             </Link>
                             <h1>{post.title}</h1>
                             <p className='my-5'>{post.content}</p>
@@ -53,7 +76,9 @@ export default function Product({ data }) {
                                         <h5 className='mx-3'>Nome Utente</h5>
                                     </div>
                                     <div className="card-body">
-                                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi, repudiandae.</p>
+                                        <p>
+                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi, repudiandae.
+                                        </p>
                                     </div>
                                 </div>
 
@@ -63,10 +88,15 @@ export default function Product({ data }) {
                                     <button type='submit' className='btn btn-primary'>Comment</button>
                                 </form>
                             </div>
+
+                            <div className="navigation my-5 d-flex justify-content-between">
+                                <button onClick={() => prevId()} className='btn btn-primary'>PREV</button>
+                                <button onClick={() => nextId()} className='btn btn-primary'>NEXT</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </section>
+            </section >
 
         </>
     )

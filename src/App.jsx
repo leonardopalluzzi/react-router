@@ -7,6 +7,8 @@ import data from './data/posts'
 import Post from './pages/Post'
 
 
+
+
 function App() {
 
   return (
@@ -17,7 +19,7 @@ function App() {
             <Route data={data} index element={<Home data={data} />} />
             <Route path="/about" Component={About} />
             <Route path="/posts" element={<Posts data={data} />} />
-            <Route path="/posts/:id" element={<Post data={data} />} />
+            <Route path={`/posts/:id`} element={<Post data={data} />} />
           </Route>
         </Routes>
       </BrowserRouter>

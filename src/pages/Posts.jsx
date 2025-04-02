@@ -8,7 +8,7 @@ export default function Posts({ data }) {
                     <h1>posts</h1>
                     <div class="row">
                         {data.map(item => (
-                            <Card id={item.id} img={item.image} content={item.content} title={item.title} />
+                            <Card key={item.id} id={item.id} img={item.image} content={item.content} title={item.title} />
                         ))}
                     </div>
 

@@ -28,7 +28,7 @@ export default function Home({ data }) {
                             {data.map(item => (
                                 <div key={item.id} className={`carousel-item ${item.id == 1 ? 'active' : ''}`}>
                                     <div className="feed_card_container">
-                                        <Card img={item.image} title={item.title} content={item.content} />
+                                        <Card id={item.id} img={item.image} title={item.title} content={item.content} />
                                     </div>
                                 </div>
 
