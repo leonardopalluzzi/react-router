@@ -131,3 +131,49 @@ body {
 
 
 }
+
+/* #endregion about  */
+
+/* #region post  */
+
+.post {
+  .post_content {
+    width: 80%;
+    border-radius: 20px;
+  }
+
+  h1 {
+    margin-bottom: 4rem;
+  }
+
+  .post_img {
+    position: relative;
+
+    .likes {
+      position: absolute;
+      bottom: 90px;
+      left: 20px;
+    }
+  }
+
+  .icons {
+    width: 50%;
+    margin: 2rem 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .comments {
+    .card {
+      border-top-color: white;
+      border-radius: 0;
+    }
+
+    .profile_img {
+      width: 6%;
+      aspect-ratio: 1;
+      border-radius: 50%;
+    }
+  }
+
+}
