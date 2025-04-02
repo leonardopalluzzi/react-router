@@ -16,8 +16,6 @@ export default function Product({ data }) {
     useEffect(() => {
         setPost(data.find(item => item.id == currentId))
         console.log(currentId)
-
-
     }, [currentId])
 
 
@@ -50,7 +48,7 @@ export default function Product({ data }) {
                                 <button onClick={() => setLikes(likes + 1)} className='btn btn-transparent text-white fs-1'>
                                     <i className="bi bi-heart"></i>
                                 </button>
-                                <span>{likes}</span>
+                                <span>{post.likes}</span>
                             </div>
                             <div>
                                 <ul className="icons">
@@ -67,20 +65,27 @@ export default function Product({ data }) {
                             </Link>
                             <h1>{post.title}</h1>
                             <p className='my-5'>{post.content}</p>
-                            <span>Likes: {likes} &hearts;</span>
+                            <span>Likes: {post.likes} &hearts;</span>
                             <div className="comments">
                                 <h4 className='my-4'>Comments</h4>
-                                <div className="card bg-transparent text-white">
-                                    <div className="card-header d-flex">
-                                        <img className='profile_img' src="https://picsum.photos/200/300" alt="" />
-                                        <h5 className='mx-3'>Nome Utente</h5>
+
+                                {post && post.comments && post.comments.length > 0 ? post.comments.map(item => (
+                                    <div key={item.likes} className="card bg-transparent text-white">
+                                        <div className="card-header d-flex">
+                                            <img className='profile_img' src={item.userImage} alt="user image" />
+                                            <h5 className='mx-3'>{item.username}</h5>
+                                            <span><button className='btn btn-transparent text-white'>&hearts;</button> {item.likes}</span>
+                                        </div>
+                                        <div className="card-body">
+                                            <p>
+                                                {item.content}
+                                            </p>
+                                        </div>
                                     </div>
-                                    <div className="card-body">
-                                        <p>
-                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi, repudiandae.
-                                        </p>
-                                    </div>
-                                </div>
+                                )) : 'Be the first to leave a comment!'}
+
+
+
 
                                 <form action="" className="add_comment">
                                     <h3>Add a Comment</h3>

@@ -10,14 +10,8 @@ export default function Card({ img, content, title, id }) {
                     <div className="card_titles">
                         <h3>{title}</h3>
                         <p>{content}</p>
-                        <Link to={`/posts/${id}`}>
-                            <a
-                                name=""
-                                id=""
-                                className="btn btn-primary"
-                                href="#"
-                                role="button"
-                            >vai al post</a>
+                        <Link className="btn btn-primary" to={`/posts/${id}`}>
+                            vai al post
                         </Link>
 
                     </div>
