@@ -43,7 +43,6 @@ export default function Product() {
         })
             .then(res => {
                 console.log(res);
-
                 res.json()
             })
             .then(response => {
