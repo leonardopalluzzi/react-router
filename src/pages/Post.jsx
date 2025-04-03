@@ -29,6 +29,7 @@ export default function Product() {
 
     }
 
+
     useEffect(() => {
         setPost(data.find(item => item.id == currentId))
     }, [currentId, data])
@@ -36,6 +37,8 @@ export default function Product() {
     function storeRouteFetch(e) {
         e.preventDefault()
         console.log('submit comment');
+
+        console.log(newComment);
         fetch(`http://localhost:3000/api/v1/comments/${currentId}`, {
             method: 'POST',
             header: 'Content-Type: application/json',
