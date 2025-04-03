@@ -16,10 +16,41 @@ export default function Product() {
 
     const navigate = useNavigate()
 
+
+    //new comment
+    const [commContent, setCommContent] = useState('')
+
+    const newComment = {
+
+        username: "Your Name",
+        userImage: "https://picsum.photos/53/50",
+        content: commContent,
+        likes: 0
+
+    }
+
     useEffect(() => {
         setPost(data.find(item => item.id == currentId))
-        console.log(currentId)
     }, [currentId, data])
+
+    function storeRouteFetch(e) {
+        e.preventDefault()
+        console.log('submit comment');
+        fetch(`http://localhost:3000/api/v1/comments/${currentId}`, {
+            method: 'POST',
+            header: 'Content-Type: application/json',
+            body: JSON.stringify(newComment)
+        })
+            .then(res => {
+                console.log(res);
+
+                res.json()
+            })
+            .then(response => {
+                console.log(response);
+            })
+            .catch(err => console.error(err))
+    }
 
 
     function nextId() {
@@ -96,9 +127,9 @@ export default function Product() {
 
 
 
-                                <form action="" className="add_comment">
+                                <form onSubmit={(e) => storeRouteFetch(e)} method='POST' className="add_comment">
                                     <h3>Add a Comment</h3>
-                                    <textarea className='bg-transparent form-control w-100 text-white my-4' name="addComment" id="addComment"></textarea>
+                                    <textarea onChange={(e) => setCommContent(e.target.value)} value={commContent} className='bg-transparent form-control w-100 text-white my-4' name="addComment" id="addComment"></textarea>
                                     <button type='submit' className='btn btn-primary'>Comment</button>
                                 </form>
                             </div>

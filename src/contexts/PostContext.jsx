@@ -13,7 +13,6 @@ function PostProvider({ children }) {
         fetch(endpoint)
             .then(res => res.json())
             .then(response => {
-                console.log(response);
                 setData(response)
             })
             .catch(error => {
