@@ -3,7 +3,7 @@ import Card from '../components/Card'
 export default function Jumbo({ data, timer }) {
     return (
         <>
-            <section className="jumbotron ">
+            <section className="jumbotron">
                 <div className="container">
                     <div className="row align-items-md-center">
                         <div className="col-md-6">

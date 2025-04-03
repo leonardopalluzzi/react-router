@@ -5,7 +5,9 @@ import { usePostContext } from "../contexts/PostContext"
 
 export default function Home() {
 
-    const { data } = usePostContext()
+    const { data } = usePostContext();
+    console.log(data);
+
 
     const [timer, setTimer] = useState(0)
 
@@ -19,6 +21,13 @@ export default function Home() {
         return () => clearInterval(interval);
     }, []);
     console.log(timer);
+
+    if (data.length < 1) {
+        return (
+            <h1>Loading...</h1>
+        )
+    }
+
     return (
         <>
             <Jumbo data={data} timer={timer} />
@@ -32,7 +41,7 @@ export default function Home() {
                             {data.map(item => (
                                 <div key={item.id} className={`carousel-item ${item.id == 1 ? 'active' : ''}`}>
                                     <div className="feed_card_container">
-                                        <Card id={item.id} img={item.image} title={item.title} content={item.content} />
+                                        <Card item={item} />
                                     </div>
                                 </div>
 

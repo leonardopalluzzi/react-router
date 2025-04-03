@@ -8,6 +8,13 @@ body {
 
 /* #region jumbo  */
 
+.alert {
+  width: 40%;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .jumbotron {
   background-image: url('./jumbo-bg.jpg');
   background-size: cover;

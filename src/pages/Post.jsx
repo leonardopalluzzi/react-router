@@ -19,7 +19,7 @@ export default function Product() {
     useEffect(() => {
         setPost(data.find(item => item.id == currentId))
         console.log(currentId)
-    }, [currentId])
+    }, [currentId, data])
 
 
     function nextId() {
@@ -40,18 +40,24 @@ export default function Product() {
 
     }
 
+    if (data.length < 1) {
+        return (
+            <h1>Loading...</h1>
+        )
+    }
+
     return (
         <>
             <section className='post'>
                 <div className="container py-5">
                     <div className="row">
                         <div className="col-6 post_img">
-                            <img className='post_content' src={post.image} alt="" />
+                            <img className='post_content' src={post?.image || 'cicciogamer.png'} alt="" />
                             <div className="likes">
                                 <button onClick={() => setLikes(likes + 1)} className='btn btn-transparent text-white fs-1'>
                                     <i className="bi bi-heart"></i>
                                 </button>
-                                <span>{post.likes}</span>
+                                <span>{post?.likes || 'loading'}</span>
                             </div>
                             <div>
                                 <ul className="icons">
@@ -66,9 +72,9 @@ export default function Product() {
                             <Link onClick={() => navigate(-1)}>
                                 <i className="bi bi-arrow-right float-right"></i>
                             </Link>
-                            <h1>{post.title}</h1>
-                            <p className='my-5'>{post.content}</p>
-                            <span>Likes: {post.likes} &hearts;</span>
+                            <h1>{post?.title || 'loading...'}</h1>
+                            <p className='my-5'>{post?.content || 'Loading...'}</p>
+                            <span>Likes: {post?.likes || 'Loading...'} &hearts;</span>
                             <div className="comments">
                                 <h4 className='my-4'>Comments</h4>
 

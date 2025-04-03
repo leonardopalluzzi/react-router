@@ -6,6 +6,7 @@ import Posts from "./pages/Posts"
 //import data from './data/posts'
 import Post from './pages/Post'
 import { PostProvider } from "./contexts/PostContext"
+import { AlertProvider } from "./contexts/AlertContext"
 
 
 
@@ -13,18 +14,21 @@ function App() {
 
   return (
     <>
-      <PostProvider>
-        <BrowserRouter>
-          <Routes>
-            <Route Component={DefaultLayout}>
-              <Route index Component={Home} />
-              <Route path="/about" Component={About} />
-              <Route path="/posts" Component={Posts} />
-              <Route path={`/posts/:id`} Component={Post} />
-            </Route>
-          </Routes>
-        </BrowserRouter>
-      </PostProvider>
+      <AlertProvider>
+        <PostProvider>
+          <BrowserRouter>
+            <Routes>
+              <Route Component={DefaultLayout}>
+                <Route index Component={Home} />
+                <Route path="/about" Component={About} />
+                <Route path="/posts" Component={Posts} />
+                <Route path={`/posts/:id`} Component={Post} />
+              </Route>
+            </Routes>
+          </BrowserRouter>
+        </PostProvider>
+      </AlertProvider>
+
 
 
     </>
