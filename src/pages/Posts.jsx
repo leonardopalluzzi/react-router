@@ -1,6 +1,9 @@
 import Card from '../components/Card'
+import { usePostContext } from "../contexts/PostContext"
 
-export default function Posts({ data }) {
+export default function Posts() {
+
+    const { data } = usePostContext()
     return (
         <>
             <section className="posts py-5">

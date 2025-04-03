@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react"
 import Jumbo from '../components/Jumbo'
 import Card from '../components/Card'
+import { usePostContext } from "../contexts/PostContext"
 
-export default function Home({ data }) {
+export default function Home() {
+
+    const { data } = usePostContext()
 
     const [timer, setTimer] = useState(0)
 
