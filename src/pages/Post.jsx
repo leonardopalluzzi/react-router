@@ -21,6 +21,8 @@ export default function Product() {
 
     const navigate = useNavigate()
 
+    const [commContent, setCommContent] = useState('')
+
 
     //effects
     useEffect(() => {
@@ -109,9 +111,8 @@ export default function Product() {
 
     }
 
-    //new comment
-    const [commContent, setCommContent] = useState('')
 
+    //new comment
     const newComment = {
 
         username: "Your Name",
