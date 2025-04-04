@@ -10,6 +10,10 @@ function PostProvider({ children }) {
     const { alert, setAlert } = useAlertContext();
 
     useEffect(() => {
+        handleRefresh()
+    }, [])
+
+    function handleRefresh() {
         fetch(endpoint)
             .then(res => res.json())
             .then(response => {
@@ -24,10 +28,10 @@ function PostProvider({ children }) {
                 })
 
             })
-    }, [])
+    }
 
     return (
-        <PostContext.Provider value={{ data, setData }}>
+        <PostContext.Provider value={{ data, setData, handleRefresh }}>
             {children}
         </PostContext.Provider>
     )

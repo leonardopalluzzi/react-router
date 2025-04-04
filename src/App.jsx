@@ -28,9 +28,6 @@ function App() {
           </BrowserRouter>
         </PostProvider>
       </AlertProvider>
-
-
-
     </>
   )
 }
