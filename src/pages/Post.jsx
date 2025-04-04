@@ -1,7 +1,6 @@
 import { useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import { useState, useEffect } from "react"
-import { Link } from "react-router-dom"
 import { usePostContext } from "../contexts/PostContext"
 import { useAlertContext } from '../contexts/AlertContext'
 import PostUi from '../components/Post.ui'
