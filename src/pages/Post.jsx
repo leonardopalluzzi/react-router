@@ -109,6 +109,8 @@ export default function Product() {
             })
             .catch(err => console.error(err))
 
+        setCommContent('')
+
     }
 
 
